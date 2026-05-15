@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -12,7 +13,7 @@ import (
 
 type contextKey string
 
-const userTokenKey contextKey = "X-User-Token"
+const headersKey contextKey = "headers"
 
 type EchoArgs struct {
 	Message string `json:"message"`
@@ -42,8 +43,7 @@ func main() {
 
 	mux := http.NewServeMux()
 	mux.Handle("/mcp", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		token := r.Header.Get("X-User-Token")
-		ctx := context.WithValue(r.Context(), userTokenKey, token)
+		ctx := context.WithValue(r.Context(), headersKey, r.Header)
 		mcpHandler.ServeHTTP(w, r.WithContext(ctx))
 	}))
 
@@ -64,23 +64,25 @@ func pingHandler(ctx context.Context, _ *mcp.CallToolRequest, _ struct{}) (*mcp.
 }
 
 func echoHandler(ctx context.Context, _ *mcp.CallToolRequest, args EchoArgs) (*mcp.CallToolResult, any, error) {
-	msg := args.Message
-
-	if greeting := os.Getenv("GREETING"); greeting != "" {
-		msg = greeting + ": " + msg
+	result := map[string]any{
+		"message":    args.Message,
+		"GREETING":   os.Getenv("GREETING"),
+		"SECRET_KEY": os.Getenv("SECRET_KEY"),
+		"headers":    map[string][]string{},
 	}
 
-	if secretKey := os.Getenv("SECRET_KEY"); secretKey != "" {
-		msg += fmt.Sprintf(" [SECRET_KEY set, len=%d]", len(secretKey))
+	if headers, ok := ctx.Value(headersKey).(http.Header); ok {
+		result["headers"] = map[string][]string(headers)
 	}
 
-	if token, _ := ctx.Value(userTokenKey).(string); token != "" {
-		msg += fmt.Sprintf(" [X-User-Token present, len=%d]", len(token))
+	data, err := json.MarshalIndent(result, "", "  ")
+	if err != nil {
+		return nil, nil, fmt.Errorf("marshal response: %w", err)
 	}
 
 	return &mcp.CallToolResult{
 		Content: []mcp.Content{
-			&mcp.TextContent{Text: msg},
+			&mcp.TextContent{Text: string(data)},
 		},
 	}, nil, nil
 }
