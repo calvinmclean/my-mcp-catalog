@@ -11,7 +11,7 @@ description: |
 runtime: containerized
 serverUserType: multiUser
 containerizedConfig:
-  image: mcp-ping-echo:latest
+  image: ghcr.io/calvinmclean/mcp-ping-echo:main
   port: 8080
   path: /mcp
 multiUserConfig:
