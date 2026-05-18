@@ -8,14 +8,13 @@ description: |
   Demonstrates containerized multi-user server templates with:
   - User-defined headers (X-User-Token per MCPServerInstance)
   - Server-level env vars (GREETING, SECRET_KEY)
-
-  This change is here to test drift detection.
 runtime: containerized
 serverUserType: multiUser
 containerizedConfig:
   image: ghcr.io/calvinmclean/mcp-ping-echo:main
   port: 8080
   path: /mcp
+  startupTimeoutSeconds: 30
 multiUserConfig:
   userDefinedHeaders:
     - name: X-User-Token
