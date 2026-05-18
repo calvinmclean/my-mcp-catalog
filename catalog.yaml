@@ -8,6 +8,8 @@ description: |
   Demonstrates containerized multi-user server templates with:
   - User-defined headers (X-User-Token per MCPServerInstance)
   - Server-level env vars (GREETING, SECRET_KEY)
+
+  This change is here to test drift detection.
 runtime: containerized
 serverUserType: multiUser
 containerizedConfig:
