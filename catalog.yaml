@@ -36,3 +36,7 @@ env:
     key: GREETING_TWO
     description: optional for diff
     required: false
+  - name: GREETING_THREE
+    key: GREETING_THREE
+    description: optional for diff
+    required: false
