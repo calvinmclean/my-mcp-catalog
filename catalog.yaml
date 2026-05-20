@@ -32,3 +32,7 @@ env:
     description: Sensitive value to demonstrate secret env var handling
     sensitive: true
     required: false
+  - name: GREETING_TWO
+    key: GREETING_TWO
+    description: optional for diff
+    required: false
