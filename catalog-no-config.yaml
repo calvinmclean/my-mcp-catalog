@@ -1,0 +1,17 @@
+name: Ping Echo Server No Config
+shortDescription: Containerized multi-user MCP server with ping/pong and echo tools
+description: |
+  A demo multi-user MCP server template. Provides two tools:
+  - ping: returns "pong" with the container hostname (useful for verifying shared-instance behavior)
+  - echo: echoes a message, optionally prefixed by the GREETING env var
+
+  Demonstrates containerized multi-user server templates with:
+  - User-defined headers (X-User-Token per MCPServerInstance)
+  - Server-level env vars (GREETING, SECRET_KEY)
+runtime: containerized
+serverUserType: multiUser
+containerizedConfig:
+  image: ghcr.io/calvinmclean/mcp-ping-echo:main
+  port: 8080
+  path: /mcp
+  startupTimeoutSeconds: 30
