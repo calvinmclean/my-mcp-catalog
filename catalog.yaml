@@ -26,7 +26,7 @@ env:
   - name: GREETING
     key: GREETING
     description: Prefix added to every echo tool response (e.g. "Hello")
-    required: false
+    required: true
   - name: SECRET_KEY
     key: SECRET_KEY
     description: Sensitive value to demonstrate secret env var handling
