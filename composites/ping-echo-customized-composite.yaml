@@ -1,0 +1,27 @@
+name: Ping Echo Customized Composite
+entryKey: ping-echo-customized-composite
+serverUserType: singleUser
+shortDescription: Composite example with tool prefix and overrides
+description: |
+  A composite example that references two top-level entries by entryKey, prefixes
+  tools from one component, and uses overrideDescription for Git-managed tool
+  customization.
+runtime: composite
+compositeConfig:
+  componentServers:
+    - catalogEntryID: ping-echo
+      toolOverrides:
+        - name: ping
+          enabled: true
+          overrideDescription: Check that the basic Ping Echo server is reachable.
+        - name: echo
+          enabled: true
+          overrideName: repeat
+          overrideDescription: Repeat a message using the basic Ping Echo server.
+    - catalogEntryID: ping-echo-configured
+      toolPrefix: configured_
+      toolOverrides:
+        - name: ping
+          enabled: true
+        - name: echo
+          enabled: true

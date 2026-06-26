@@ -1,4 +1,5 @@
 name: Ping Echo Server 2
+entryKey: multi-user-ping-echo-2
 shortDescription: Containerized multi-user MCP server with ping/pong and echo tools
 description: |
   A demo multi-user MCP server template. Provides two tools:

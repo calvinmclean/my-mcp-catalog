@@ -1,0 +1,26 @@
+name: Ping Echo Configured
+entryKey: ping-echo-configured
+serverUserType: singleUser
+shortDescription: Basic ping/echo server with user configuration
+description: |
+  A single-user example server that prompts the connecting user for a GREETING
+  value and uses it as an echo response prefix.
+runtime: containerized
+containerizedConfig:
+  image: ghcr.io/calvinmclean/mcp-ping-echo:main
+  port: 8080
+  path: /mcp
+  startupTimeoutSeconds: 30
+env:
+  - name: Greeting
+    key: GREETING
+    description: Prefix added to every echo response, for example "Hello".
+    required: true
+toolPreview:
+  - name: ping
+    description: Return pong from the server.
+    params: {}
+  - name: echo
+    description: Echo a message back to the caller with the configured greeting.
+    params:
+      message: Message to echo

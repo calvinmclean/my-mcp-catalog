@@ -1,0 +1,22 @@
+name: Ping Echo
+entryKey: ping-echo
+serverUserType: singleUser
+shortDescription: Basic containerized ping/echo MCP server
+description: |
+  A small single-user example server with two tools:
+  - ping: returns pong from the server
+  - echo: echoes a provided message
+runtime: containerized
+containerizedConfig:
+  image: ghcr.io/calvinmclean/mcp-ping-echo:main
+  port: 8080
+  path: /mcp
+  startupTimeoutSeconds: 30
+toolPreview:
+  - name: ping
+    description: Return pong from the server.
+    params: {}
+  - name: echo
+    description: Echo a message back to the caller.
+    params:
+      message: Message to echo

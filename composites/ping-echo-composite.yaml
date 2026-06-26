@@ -1,0 +1,11 @@
+name: Ping Echo Composite
+entryKey: ping-echo-composite
+serverUserType: singleUser
+shortDescription: Composite example that references another entry by entryKey
+description: |
+  A minimal composite example that pulls tools from the top-level Ping Echo
+  catalog entry using its portable entryKey.
+runtime: composite
+compositeConfig:
+  componentServers:
+    - catalogEntryID: ping-echo
