@@ -11,9 +11,6 @@ compositeConfig:
   componentServers:
     - catalogEntryID: ping-echo
       toolOverrides:
-        - name: ping
-          enabled: true
-          overrideDescription: Check that the basic Ping Echo server is reachable.
         - name: echo
           enabled: true
           overrideName: repeat
@@ -22,6 +19,6 @@ compositeConfig:
       toolPrefix: configured_
       toolOverrides:
         - name: ping
-          enabled: true
+          enabled: false
         - name: echo
           enabled: true
