@@ -12,7 +12,7 @@ compositeConfig:
     - catalogEntryID: ping-echo
       toolOverrides:
         - name: echo
-          enabled: true
+          enabled: false
           overrideName: repeat
           overrideDescription: Repeat a message using the basic Ping Echo server.
     - catalogEntryID: ping-echo-configured
