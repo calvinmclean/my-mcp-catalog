@@ -1,6 +1,0 @@
-name: Composite Multi-Reference Example
-runtime: composite
-compositeConfig:
-  componentServers:
-    - mcpServerID: ms1sqj9r
-      toolPrefix: my_configured_
