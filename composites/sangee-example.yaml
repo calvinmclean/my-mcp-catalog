@@ -1,9 +1,0 @@
-name: Sangee Composite Customized EnabledFalse
-runtime: composite
-compositeConfig:
-  componentServers:
-    - catalogEntryID: /Users/calvinmclean/development/obot-platform/mcp-catalog::obot-gmail
-      toolPrefix: my_configured_
-      toolOverrides:
-        - name: delete_email
-          enabled: false
