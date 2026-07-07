@@ -1,0 +1,23 @@
+name: No Tools
+serverUserType: singleUser
+shortDescription: Composite example with tool prefix and overrides
+description: |
+  A composite example that references two top-level entries by entryKey, prefixes
+  tools from one component, and uses overrideDescription for Git-managed tool
+  customization.
+runtime: composite
+compositeConfig:
+  componentServers:
+    - catalogEntryID: ping-echo
+      toolOverrides:
+        - name: echo
+          enabled: false
+          overrideName: repeat
+          overrideDescription: Repeat a message using the basic Ping Echo server.
+    - catalogEntryID: ping-echo-configured
+      toolPrefix: configured_
+      toolOverrides:
+        - name: ping
+          enabled: false
+        - name: echo
+          enabled: false
