@@ -1,0 +1,21 @@
+name: NPX Test
+entryKey: npx-test
+serverUserType: singleUser
+shortDescription: Credential-free NPX runtime test server
+description: |
+  A credential-free MCP server for verifying the NPX runtime.
+  It exposes the reference MCP server's test tools, including echo and add.
+runtime: npx
+npxConfig:
+  package: "@modelcontextprotocol/server-everything"
+  startupTimeoutSeconds: 60
+toolPreview:
+  - name: echo
+    description: Return the supplied message.
+    params:
+      message: Message to return.
+  - name: add
+    description: Add two numbers.
+    params:
+      a: First number.
+      b: Second number.

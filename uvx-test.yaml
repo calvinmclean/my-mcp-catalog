@@ -1,0 +1,18 @@
+name: UVX Test
+entryKey: uvx-test
+serverUserType: singleUser
+shortDescription: Credential-free UVX runtime test server
+description: |
+  A credential-free MCP server for verifying the UVX runtime.
+  It exposes a tool that returns the current time for the configured timezone.
+runtime: uvx
+uvxConfig:
+  package: mcp-server-time
+  args:
+    - --local-timezone=America/Los_Angeles
+  startupTimeoutSeconds: 60
+toolPreview:
+  - name: get_current_time
+    description: Return the current time for a timezone.
+    params:
+      timezone: IANA timezone name, such as America/Los_Angeles.
