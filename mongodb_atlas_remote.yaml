@@ -1,0 +1,29 @@
+name: MongoDB Atlas Remote
+entryKey: obot-mongodb-atlas-remote
+serverUserType: singleUser
+shortDescription: Manage MongoDB Atlas infrastructure and databases through MongoDB's hosted MCP server
+description: |
+  Connect to MongoDB's hosted Atlas MCP server to manage Atlas resources and work with data in Atlas databases without running a local MCP server.
+
+  ## Features
+  - **Atlas Management**: Inspect and manage organizations, projects, clusters, access lists, and database users
+  - **Database Operations**: Query and modify databases, collections, documents, indexes, and aggregation pipelines
+  - **Atlas Stream Processing**: Discover, create, manage, and remove stream processing resources
+  - **MongoDB Knowledge**: Search official MongoDB documentation and curated guidance
+
+  ## What you'll need to connect
+
+  Create an **MCP configuration** in MongoDB Atlas, then use its Client ID and Client Secret when Obot prompts you to authenticate.
+
+  - Creating an MCP configuration requires the **Project Owner** or **Organization Owner** role.
+  - MCP configuration credentials are specifically issued for the hosted Atlas MCP server. They are different from the Atlas API service-account credentials used by the MongoDB Atlas Management connector.
+  - The permissions assigned to the MCP configuration determine which Atlas resources and operations are available.
+
+  This hosted connector is intended for MongoDB Atlas. For Community Edition, Enterprise Advanced, self-hosted deployments, or databases reachable only on a private network, use the **MongoDB Database** connector instead.
+metadata:
+  categories: Databases,Data & Analytics
+icon: https://avatars.githubusercontent.com/u/45120?s=48&v=4
+repoURL: https://github.com/mongodb-js/mongodb-mcp-server
+runtime: remote
+remoteConfig:
+  fixedURL: https://mcp.mongodb.com
