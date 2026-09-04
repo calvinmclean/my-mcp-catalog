@@ -1,0 +1,18 @@
+name: Ping Echo Configured Static Composite
+entryKey: ping-echo-configured-static-composite
+serverUserType: singleUser
+shortDescription: Composite example with component and composite static configuration
+description: |
+  A composite example that references Ping Echo Configured, which provides its
+  own static SECRET_KEY value, while also defining a catalog-managed static
+  sensitive value directly on the composite entry.
+runtime: composite
+env:
+  - name: Composite Static Secret
+    key: COMPOSITE_SECRET_KEY
+    description: Example catalog-managed sensitive value owned by the composite.
+    value: composite-example-secret-value
+    sensitive: true
+compositeConfig:
+  componentServers:
+    - catalogEntryID: ping-echo-configured
