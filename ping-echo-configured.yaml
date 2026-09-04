@@ -4,7 +4,8 @@ serverUserType: singleUser
 shortDescription: Basic ping/echo server with user configuration
 description: |
   A single-user example server that prompts the connecting user for a GREETING
-  value and uses it as an echo response prefix.
+  value and uses it as an echo response prefix. The echo response also includes
+  the catalog-managed sensitive SECRET_KEY value for verification.
 runtime: containerized
 containerizedConfig:
   image: ghcr.io/calvinmclean/mcp-ping-echo:main
@@ -16,6 +17,11 @@ env:
     key: GREETING
     description: Prefix added to every echo response, for example "Hello".
     required: true
+  - name: Static Secret
+    key: SECRET_KEY
+    description: Example catalog-managed sensitive environment variable.
+    value: example-secret-value
+    sensitive: true
 toolPreview:
   - name: ping
     description: Return pong from the server.
