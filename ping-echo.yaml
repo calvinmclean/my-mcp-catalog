@@ -1,4 +1,5 @@
 name: Ping Echo
+NOT YAML
 entryKey: ping-echo
 shortDescription: Basic containerized ping/echo MCP server
 description: |
