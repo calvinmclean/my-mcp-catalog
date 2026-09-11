@@ -1,6 +1,5 @@
 name: NPX Test
 entryKey: npx-test
-serverUserType: singleUser
 shortDescription: Credential-free NPX runtime test server
 description: |
   A credential-free MCP server for verifying the NPX runtime.

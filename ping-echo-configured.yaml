@@ -1,6 +1,5 @@
 name: Ping Echo Configured
 entryKey: ping-echo-configured
-serverUserType: singleUser
 shortDescription: Basic ping/echo server with user configuration
 description: |
   A single-user example server that prompts the connecting user for a GREETING
@@ -12,12 +11,14 @@ containerizedConfig:
   port: 8080
   path: /mcp
   startupTimeoutSeconds: 30
-env:
+config:
   - name: Greeting
+    usage: env
     key: GREETING
     description: Prefix added to every echo response, for example "Hello".
     required: true
   - name: Static Secret
+    usage: env
     key: SECRET_KEY
     description: Example catalog-managed sensitive environment variable.
     value: example-secret-value

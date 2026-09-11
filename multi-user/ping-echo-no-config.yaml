@@ -8,7 +8,6 @@ description: |
 
   Demonstrates a containerized multi-user server template without required user configuration.
 runtime: containerized
-serverUserType: multiUser
 containerizedConfig:
   image: ghcr.io/calvinmclean/mcp-ping-echo:main
   port: 8080

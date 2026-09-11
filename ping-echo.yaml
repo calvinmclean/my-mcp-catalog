@@ -1,6 +1,5 @@
 name: Ping Echo
 entryKey: ping-echo
-serverUserType: singleUser
 shortDescription: Basic containerized ping/echo MCP server
 description: |
   A small single-user example server with two tools:

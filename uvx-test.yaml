@@ -1,6 +1,5 @@
 name: UVX Test
 entryKey: uvx-test
-serverUserType: singleUser
 shortDescription: Credential-free UVX runtime test server
 description: |
   A credential-free MCP server for verifying the UVX runtime.

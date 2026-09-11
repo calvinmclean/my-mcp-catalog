@@ -1,6 +1,5 @@
 name: MongoDB Atlas Remote
 entryKey: obot-mongodb-atlas-remote
-serverUserType: singleUser
 shortDescription: Manage MongoDB Atlas infrastructure and databases through MongoDB's hosted MCP server
 description: |
   Connect to MongoDB's hosted Atlas MCP server to manage Atlas resources and work with data in Atlas databases without running a local MCP server.

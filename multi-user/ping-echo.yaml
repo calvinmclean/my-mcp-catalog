@@ -7,37 +7,39 @@ description: |
   - echo: echoes a message, optionally prefixed by the GREETING env var
 
   Demonstrates containerized multi-user server templates with:
-  - User-defined headers (X-User-Token per MCPServerInstance)
+  - Header configuration (X-User-Token)
   - Server-level env vars (GREETING, SECRET_KEY)
 runtime: containerized
-serverUserType: multiUser
 containerizedConfig:
   image: ghcr.io/calvinmclean/mcp-ping-echo:main
   port: 8080
   path: /mcp
   startupTimeoutSeconds: 30
-multiUserConfig:
-  userDefinedHeaders:
-    - name: X-User-Token
-      key: X-User-Token
-      description: Per-user authentication token passed with each request to the shared server
-      sensitive: true
-      required: false
-env:
+config:
+  - name: X-User-Token
+    usage: header
+    key: X-User-Token
+    description: Authentication token passed with each request to the server
+    sensitive: true
+    required: false
   - name: GREETING
+    usage: env
     key: GREETING
     description: Prefix added to every echo tool response (e.g. "Hello")
     required: true
   - name: SECRET_KEY
+    usage: env
     key: SECRET_KEY
     description: Sensitive value to demonstrate secret env var handling
     sensitive: true
     required: false
   - name: GREETING_TWO
+    usage: env
     key: GREETING_TWO
     description: optional for diff
     required: false
   - name: GREETING_THREE
+    usage: env
     key: GREETING_THREE
     description: optional for diff
     required: false

@@ -1,6 +1,5 @@
 name: Tableau Cloud
 entryKey: tableau-cloud
-serverUserType: singleUser
 shortDescription: Query Tableau Cloud data, explore content, and manage Pulse metrics with OAuth
 description: |
   The official Tableau-hosted Model Context Protocol (MCP) server for Tableau Cloud. It uses your Tableau Cloud identity, so each tool call respects your existing site role and content permissions.
