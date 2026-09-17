@@ -1,0 +1,5 @@
+name: Invalid Composite Catalog Entry
+runtime: composite
+compositeConfig:
+  componentServers:
+    - catalogEntryID: testing
