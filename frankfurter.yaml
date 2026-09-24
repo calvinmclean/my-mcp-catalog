@@ -1,0 +1,9 @@
+name: Frankfurter
+entryKey: frankfurter
+shortDescription: Currency information and exchange rates
+description: Currency information and exchange rates from the public Frankfurter API. No authentication required.
+runtime: openapi
+openAPIConfig:
+  source:
+    url: https://api.frankfurter.dev/v2/openapi.json
+  baseURL: https://api.frankfurter.dev/v2

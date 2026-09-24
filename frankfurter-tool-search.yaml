@@ -1,0 +1,24 @@
+name: Frankfurter Tool Search
+entryKey: frankfurter-tool-search
+shortDescription: Currency information and exchange rates with Tool Search
+description: |
+  Frankfurter with Tool Search, exclusions, and a demonstration header input.
+  Frankfurter does not require authentication. Enter a dummy token value,
+  not a real token from another service.
+runtime: openapi
+openAPIConfig:
+  source:
+    url: https://api.frankfurter.dev/v2/openapi.json
+  baseURL: https://api.frankfurter.dev/v2
+  toolSearch: true
+  exclude:
+    - method: GET
+      pathPattern: "^/providers/"
+config:
+  - key: Authorization
+    name: Example API token
+    description: Demonstration only; enter a dummy value for Frankfurter.
+    usage: header
+    required: true
+    sensitive: true
+    prefix: "Bearer "
