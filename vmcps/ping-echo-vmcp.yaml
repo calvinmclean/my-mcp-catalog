@@ -1,0 +1,8 @@
+type: vmcp
+entryKey: ping-echo-composite
+displayName: Ping Echo
+description: Exposes the Ping Echo catalog entry through a vMCP.
+components:
+  - id: ping-echo
+    name: Ping Echo
+    mcpServerCatalogEntryKey: ping-echo

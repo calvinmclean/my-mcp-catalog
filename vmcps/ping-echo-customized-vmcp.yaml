@@ -1,0 +1,25 @@
+type: vmcp
+entryKey: ping-echo-customized-composite
+displayName: Ping Echo Customized
+description: Combines the basic and configured Ping Echo entries with tool customization.
+components:
+  - id: ping-echo
+    name: Ping Echo
+    mcpServerCatalogEntryKey: ping-echo
+    toolOverrides:
+      - name: echo
+        enabled: false
+        overrideName: repeat
+        overrideDescription: Repeat a message using the basic Ping Echo server.
+  - id: ping-echo-configured
+    name: Ping Echo Configured
+    mcpServerCatalogEntryKey: ping-echo-configured
+    toolPrefix: configured_
+    configuration:
+      - key: GREETING
+        policy: userAllowed
+    toolOverrides:
+      - name: ping
+        enabled: false
+      - name: echo
+        enabled: true

@@ -5,7 +5,6 @@ description: |
   A small single-user example server with two tools:
   - ping: returns pong from the server
   - echo: echoes a provided message
-  Added this line for diff
 runtime: containerized
 containerizedConfig:
   image: ghcr.io/calvinmclean/mcp-ping-echo:latest

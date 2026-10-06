@@ -1,7 +1,0 @@
-name: Composite Multi-Reference Example
-runtime: composite
-compositeConfig:
-  componentServers:
-    - mcpServerID: ms1hlj54
-    - catalogEntryID: ping-echo
-    - catalogEntryID: default-ping-echo-ui-09984d2b79rdd
