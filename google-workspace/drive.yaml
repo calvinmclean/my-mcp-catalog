@@ -1,0 +1,21 @@
+name: Google Drive (Developer Preview)
+entryKey: google-workspace-drive-preview
+shortDescription: Search and manage Google Drive files through Google's hosted MCP server
+description: |
+  Google's hosted Drive MCP server can search files, read content and metadata,
+  and create or copy files using each connected user's Drive permissions.
+
+  Requires membership in the Google Workspace Developer Preview Program. Enable
+  the Drive API (drive.googleapis.com) and Drive MCP API
+  (drivemcp.googleapis.com) in a Google Cloud project. Configure a Google OAuth
+  consent screen and a web application OAuth client with
+  https://YOUR_OBOT_HOST/oauth/mcp/callback as an authorized redirect URI. Add
+  https://www.googleapis.com/auth/drive.readonly and
+  https://www.googleapis.com/auth/drive.file to the consent screen, then
+  configure the client ID and secret in Obot before users connect.
+
+  Setup: https://developers.google.com/workspace/drive/api/guides/configure-mcp-server
+runtime: remote
+remoteConfig:
+  fixedURL: https://drivemcp.googleapis.com/mcp/v1
+  staticOAuthRequired: true

@@ -1,0 +1,22 @@
+name: Google Calendar (Developer Preview)
+entryKey: google-workspace-calendar-preview
+shortDescription: Find calendars and events through Google's hosted MCP server
+description: |
+  Google's hosted Calendar MCP server can list calendars and events, suggest
+  times, and manage events using each connected user's Calendar permissions.
+
+  Requires membership in the Google Workspace Developer Preview Program. Enable
+  the Calendar API (calendar-json.googleapis.com) and Calendar MCP API
+  (calendarmcp.googleapis.com) in a Google Cloud project. Configure a Google
+  OAuth consent screen and a web application OAuth client with
+  https://YOUR_OBOT_HOST/oauth/mcp/callback as an authorized redirect URI. Add
+  https://www.googleapis.com/auth/calendar.calendarlist.readonly,
+  https://www.googleapis.com/auth/calendar.events.freebusy, and
+  https://www.googleapis.com/auth/calendar.events.readonly to the consent
+  screen, then configure the client ID and secret in Obot before users connect.
+
+  Setup: https://developers.google.com/workspace/calendar/api/guides/configure-mcp-server
+runtime: remote
+remoteConfig:
+  fixedURL: https://calendarmcp.googleapis.com/mcp/v1
+  staticOAuthRequired: true

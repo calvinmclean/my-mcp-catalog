@@ -1,0 +1,21 @@
+name: Gmail (Developer Preview)
+entryKey: google-workspace-gmail-preview
+shortDescription: Search Gmail and manage drafts and labels through Google's hosted MCP server
+description: |
+  Google's hosted Gmail MCP server can search and read threads, create drafts,
+  and manage labels using each connected user's Gmail permissions.
+
+  Requires membership in the Google Workspace Developer Preview Program. Enable
+  the Gmail API (gmail.googleapis.com) and Gmail MCP API
+  (gmailmcp.googleapis.com) in a Google Cloud project. Configure a Google OAuth
+  consent screen and a web application OAuth client with
+  https://YOUR_OBOT_HOST/oauth/mcp/callback as an authorized redirect URI. Add
+  https://www.googleapis.com/auth/gmail.readonly and
+  https://www.googleapis.com/auth/gmail.compose to the consent screen, then
+  configure the client ID and secret in Obot before users connect.
+
+  Setup: https://developers.google.com/workspace/gmail/api/guides/configure-mcp-server
+runtime: remote
+remoteConfig:
+  fixedURL: https://gmailmcp.googleapis.com/mcp/v1
+  staticOAuthRequired: true
